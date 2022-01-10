@@ -334,6 +334,9 @@
             document.getElementById("close_modal").click();
             step = 0;
             selected = null;
+            document.getElementById("preveri_gumb").innerText = "Preveri!";
+            document.getElementById("preveri_gumb").removeEventListener("click", helper_next_level);
+            document.getElementById("preveri_gumb").addEventListener("click", helper_check_asnwer);
             return;
         }
         load_level();
