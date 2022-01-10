@@ -1,4 +1,4 @@
-#Zgodla
+# Zgodla
 
 Gre za aplikacijo, ki pomaga pri učenju zgodovine skozi igro. Namenjena je uprabi na mobilnih napravah. 
 
