@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registracija</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            font-family: Roboto, "Times New Roman", serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        input {
+            background-color: #E5E5E5 !important;
+            color: #9F9F9F;
+            border-color: white !important;
+            box-shadow: 0 4px 6px 0 #9F9F9F;
+            padding: 10px !important;
+            border-radius: 16px !important;
+        }
+
+        .form-control:focus {
+            border-color: orange;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px orange;
+        }
+        button {
+            background-color: orange !important;
+            color: white !important;
+            box-shadow: 0 2px 8px 0 #9F9F9F;
+            padding: 1.1rem !important;
+            border-radius: 1.5rem !important;
+        }
+        a{
+            text-decoration: none;
+        }
+        /* unvisited link */
+        a:link {
+            color: orange;
+        }
+
+        /* visited link */
+        a:visited {
+            color: orange;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: orange;
+        }
+
+        /* selected link */
+        a:active {
+            color: orange;
+        }
+    </style>
+</head>
+<body class="center" style="margin: auto">
+<div class=" h-100 d-flex justify-content-center align-items-center" style="height: 100%;margin-left: auto">
+    <div class="d-flex justify-content-center flex-column align-items-center">
+        <h3 class="d-inline-flex text-center" style="font-weight: bolder; margin-bottom: 40px;">Registracija</h3>
+        <div class="d-flex w-75 justify-content-center">
+            <form class="d-flex justify-content-center flex-wrap align-center text-center" method="POST">
+                {% csrf_token %}
+                <div class="input-group d-flex  justify-content-center " style="margin-bottom: 15px">
+                    <input type="text" placeholder="Ime" class="form-control " name="first_name">
+                </div>
+                <div class="input-group d-flex  justify-content-center " style="margin-bottom: 15px">
+                    <input type="text" placeholder="Priimek" class="form-control " name="last_name">
+                </div>
+                <div class="input-group d-flex  justify-content-center " style="margin-bottom: 15px">
+                    <input type="email" placeholder="Elektronski naslov" class="form-control " name="email">
+                </div>
+                <div class="input-group d-flex  justify-content-center " style="margin-bottom: 15px">
+                    <input type="text" class="form-control " placeholder="Uporabniško ime" name="username">
+                </div>
+                <div class="input-group d-flex  justify-content-center " style="margin-bottom: 15px">
+                    <input type="password" placeholder="Geslo" class="form-control " name="password">
+                </div>
+                <button type="submit" class="btn form-control" style="margin-top: 40px;">Registracija</button>
+                <p style="margin-top: 40px;">Že imaš račun? <a href="/prijava">Prijavi se</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

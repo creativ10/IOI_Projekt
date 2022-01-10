@@ -1,0 +1,67 @@
+{% extends "igra/base.html" %}
+{% load static %}
+{% block custom_page_css %}
+    <style>
+        .pot {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            right: 0;
+            background-image: url("{% static 'images/level1/pot_1.svg' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            background-position: center;
+            background-position-x: 200px;
+            z-index: 0;
+        }
+
+        .leveli > button {
+            box-sizing: content-box;
+            min-height: 150px;
+            min-width: 150px;
+            max-height: 200px;
+            max-width: 200px;
+            border-radius: 50%;
+            background-color: #66cccc;
+            outline: #669999 solid 15px;
+            z-index: 1;
+            border: none;
+        }
+
+
+        .leveli > button:focus {
+            outline: #669999 solid 15px;
+        }
+
+        .leveli {
+            position: fixed;
+            left: 40%;
+        }
+
+        .leveli > button > img {
+            transform: rotate(-24deg);
+        }
+
+
+
+
+    </style>
+{% endblock custom_page_css %}
+{% block content %}
+    <div class="pot">
+        <div class="d-flex h-100" style="margin-left: auto ; padding: 0; align-items: center">
+            <div class="leveli d-flex flex-column " style="justify-content: space-evenly; transform: rotate(24deg);height:calc(100vh - 20%)">
+                <button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="fetch_level(2);"><img src="{% static 'images/level1/razvoj_cloveka.svg' %}" style="width: 150px;"></button>
+                <button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="fetch_level(1);"><img src="{% static 'images/level1/kladivo.svg' %}" style="width: 100px;"></button>
+            </div>
+        </div>
+    </div>
+    <div class="w-100 h-100">
+        <img src="{% static 'images/level1/trava_levo_spodaj.svg' %}" style="position: absolute; bottom: 0;height: 20%; left: -40px">
+        <img src="{% static 'images/level1/trava_desno_spodaj.svg' %}" style="position: absolute; bottom: 0;height: 20%; right: 40px">
+        <img src="{% static 'images/level1/drevesa_center_desno.svg' %}" style="position: absolute; bottom: 25%;height: 30%; right: 20px">
+        <img src="{% static 'images/level1/trava_center_levo.svg' %}" style="position: absolute; bottom: 50%;height: 20%; left: -40px">
+        <img src="{% static 'images/level1/drevesa_zgoraj_desno.svg' %}" style="position: absolute; top: 5%;height: 25%; right: 40px">
+    </div>
+{% endblock %}

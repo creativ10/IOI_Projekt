@@ -1,0 +1,77 @@
+{% extends "igra/base.html" %}
+{% load static %}
+{% block custom_page_css %}
+    <style>
+        .pot {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            background-image: url("{% static 'images/level3/pot_3.svg' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: bottom;
+            background-size: 100% 80%;
+            z-index: 0;
+        }
+
+        .leveli > button {
+            box-sizing: content-box;
+            min-height: 300px;
+            min-width: 300px;
+            border-radius: 50%;
+            border: none;
+            background-color: #66cccc;
+            outline: #669999 solid 15px;
+            z-index: 1;
+            position: fixed;
+            bottom: 20%;
+        }
+
+        .leveli>button:focus{
+            outline: #669999 solid 15px;
+        }
+
+        .leveli {
+            position: fixed;
+            left: 30%;
+        }
+
+
+        .konec > button {
+            background-color: #f4e39a;
+            position: fixed;
+            top: 13%;
+            left: 30%;
+            width: 40vw;
+            height: 40vw;
+            border-radius: 50%;
+            border: none;
+            outline: #fdca5a solid 20px;
+            opacity: 1;
+        }
+        .konec>button:focus{
+            outline: #fdca5a solid 20px;
+        }
+    </style>
+{% endblock custom_page_css %}
+{% block content %}
+    <div class="pot">
+        <div class="konec">
+            <button><img src="{% static 'images/level3/medalja.svg' %}" style="width: 60%;"></button>
+        </div>
+        <div class="leveli">
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="fetch_level(6);"><img src="{% static 'images/level3/gore.svg' %}" style="width: 80%; padding-bottom: 10%"></button>
+        </div>
+    </div>
+    <div class="w-100 h-100">
+        <img src="{% static 'images/level3/okolje/trava_spodaj_levo_3.svg' %}" style="position: absolute; bottom: 10px;height: 20%; left: -40px;">
+        <img src="{% static 'images/level3/okolje/trava_spodaj_desno_3.svg' %}" style="position: absolute; bottom: 20px;height: 20%; right: 40px;">
+        <img src="{% static 'images/level3/okolje/devo_sredina_levo.svg' %}" style="position: absolute; top:5%;height: 25%; left: 40px; ">
+        <img src="{% static 'images/level3/okolje/drevo_sredina_desno.svg' %}" style="position: absolute; top: 5%;height: 30%; right: 20px" >
+        <img src="{% static 'images/level3/okolje/devo_sredina_levo.svg' %}" style="position: absolute; bottom: 40%;height: 30%; left: 50px">
+        <img src="{% static 'images/level3/okolje/drevo_sredina_desno.svg' %}" style="position: absolute; bottom: 40%;height: 30%; right: 0">
+    </div>
+
+
+{% endblock %}
